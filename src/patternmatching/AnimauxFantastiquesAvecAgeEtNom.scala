@@ -32,11 +32,15 @@ object AnimauxFantastiquesAvecAgeEtNom {
       nom: String = "luc"
   ) extends animaux
 
+  val tuplesit = ('a',1)
+  val (c,idx) = tuplesit
+
+  val ageTest = 3
   def cri(animal: animaux): String =
     animal match {
       case o: Chat if o.age > 2 => "MOUAAAAOUUUU"
       case o: Chat              => "miaou"
-      case chien @ Chien(2,_)     => "paf le chien a 2 ans"
+      case chien @ Chien(`ageTest`,_)     => "paf le chien a 2 ans"
       case patrick @ EtoileDeMer(_,"patrick")     => "Copain de bob l'éponge"
       case Chien(age,nom)             => s"${nom} le chien à ${age} ans"
       case o: Lezard            => "euh"

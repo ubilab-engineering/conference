@@ -28,10 +28,24 @@ object PartialFunction {
 
     println(lInt.map(myString))
 
-    println(lInt.filter({
+    println(
+
+      lInt.filter({
+
+
       case p if p > 3 => true
       case _ => false
-    }))
+
+
+
+
+
+
+
+
+
+
+      }))
   }
 
 }
