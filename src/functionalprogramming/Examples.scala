@@ -1,4 +1,35 @@
 package functionalprogramming
+import scala.annotation.tailrec
+
+
+
+
+def fibonnaci(n: Int): Int = {
+  if (n <= 1) n
+  else fibonnaci(n - 1) + fibonnaci(n - 2)
+}
+
+fibonnaci(10)
+fibonnaci(10000) // StackOverflowError AIE CARAMBA
+
+
+
+def fib(n:Int) : Int = {
+
+  @tailrec
+  def fibTc(n:Int, a:Int, b:Int) : Int = {
+    if (n <= 1) a
+    else fibTc(n - 1, b, a + b)
+  }
+  if (n <= 1) n
+  else
+    fibTc(n - 1, 1, 1)
+}
+
+
+fib(10000)
+
+
 
 case object Examples {
 
